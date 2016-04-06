@@ -1,0 +1,734 @@
+
+Mega644.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000004c0  00800100  000003ce  00000442  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000003ce  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000902  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000934  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000078  00000000  00000000  00000974  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000094e  00000000  00000000  000009ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001b3  00000000  00000000  0000133a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000024f  00000000  00000000  000014ed  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000160  00000000  00000000  0000173c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001e6  00000000  00000000  0000189c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000693  00000000  00000000  00001a82  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000068  00000000  00000000  00002115  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+   8:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+   c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  10:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  14:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  18:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  1c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  20:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  24:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  28:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  2c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  30:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  34:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  38:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  3c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  40:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  44:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  48:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  4c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  50:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  54:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  58:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  5c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  60:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  64:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  68:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  6c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  70:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  74:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  78:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d0 e1       	ldi	r29, 0x10	; 16
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_copy_data>:
+  88:	15 e0       	ldi	r17, 0x05	; 5
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	ee ec       	ldi	r30, 0xCE	; 206
+  90:	f3 e0       	ldi	r31, 0x03	; 3
+  92:	02 c0       	rjmp	.+4      	; 0x98 <__do_copy_data+0x10>
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+  98:	a0 3c       	cpi	r26, 0xC0	; 192
+  9a:	b1 07       	cpc	r27, r17
+  9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0xc>
+  9e:	0e 94 d2 01 	call	0x3a4	; 0x3a4 <main>
+  a2:	0c 94 e5 01 	jmp	0x3ca	; 0x3ca <_exit>
+
+000000a6 <__bad_interrupt>:
+  a6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000aa <write_com>:
+
+/*------------------写命令到LCD------------------------------*/
+void write_com(unsigned char cmdcode)
+{
+
+Di=0;
+  aa:	2f 98       	cbi	0x05, 7	; 5
+RW=0;
+  ac:	2e 98       	cbi	0x05, 6	; 5
+
+Lcd_Bus=cmdcode;
+  ae:	8b b9       	out	0x0b, r24	; 11
+delay(0);
+Enable=1;
+  b0:	2d 9a       	sbi	0x05, 5	; 5
+delay(0);
+Enable=0;
+  b2:	2d 98       	cbi	0x05, 5	; 5
+  b4:	08 95       	ret
+
+000000b6 <write_data>:
+/*-------------------写数据到LCD----------------------------*/
+
+void write_data(unsigned char Dispdata)
+{
+
+Di=1;
+  b6:	2f 9a       	sbi	0x05, 7	; 5
+RW=0;
+  b8:	2e 98       	cbi	0x05, 6	; 5
+
+Lcd_Bus=Dispdata;
+  ba:	8b b9       	out	0x0b, r24	; 11
+delay(0);
+Enable=1;
+  bc:	2d 9a       	sbi	0x05, 5	; 5
+delay(0);
+Enable=0;
+  be:	2d 98       	cbi	0x05, 5	; 5
+  c0:	08 95       	ret
+
+000000c2 <frame>:
+
+
+
+/*------------------显示边框-------------------------------*/
+void frame()
+{
+  c2:	cf 93       	push	r28
+unsigned char i;
+Mcs=1;
+  c4:	15 9a       	sbi	0x02, 5	; 2
+Scs=1;
+  c6:	14 9a       	sbi	0x02, 4	; 2
+write_com(Page_Add+0);
+  c8:	88 eb       	ldi	r24, 0xB8	; 184
+  ca:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+  ce:	80 e4       	ldi	r24, 0x40	; 64
+  d0:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+  d4:	c0 e4       	ldi	r28, 0x40	; 64
+for(i=0;i<64;i++) write_data(0x01);
+  d6:	81 e0       	ldi	r24, 0x01	; 1
+  d8:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+  dc:	c1 50       	subi	r28, 0x01	; 1
+  de:	d9 f7       	brne	.-10     	; 0xd6 <frame+0x14>
+write_com(Page_Add+7);
+  e0:	8f eb       	ldi	r24, 0xBF	; 191
+  e2:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+  e6:	80 e4       	ldi	r24, 0x40	; 64
+  e8:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+  ec:	c0 e4       	ldi	r28, 0x40	; 64
+for(i=0;i<64;i++) write_data(0x80);
+  ee:	80 e8       	ldi	r24, 0x80	; 128
+  f0:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+  f4:	c1 50       	subi	r28, 0x01	; 1
+  f6:	d9 f7       	brne	.-10     	; 0xee <frame+0x2c>
+  f8:	c8 eb       	ldi	r28, 0xB8	; 184
+
+for(i=0;i<8;i++)
+
+{
+Mcs=0;
+  fa:	15 98       	cbi	0x02, 5	; 2
+Scs=1;
+  fc:	14 9a       	sbi	0x02, 4	; 2
+write_com(Page_Add+i);
+  fe:	8c 2f       	mov	r24, r28
+ 100:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+63);
+ 104:	8f e7       	ldi	r24, 0x7F	; 127
+ 106:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_data(0xff);
+ 10a:	8f ef       	ldi	r24, 0xFF	; 255
+ 10c:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+Mcs=1;
+ 110:	15 9a       	sbi	0x02, 5	; 2
+Scs=0;
+ 112:	14 98       	cbi	0x02, 4	; 2
+write_com(Page_Add+i);
+ 114:	8c 2f       	mov	r24, r28
+ 116:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 11a:	80 e4       	ldi	r24, 0x40	; 64
+ 11c:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_data(0xff);
+ 120:	8f ef       	ldi	r24, 0xFF	; 255
+ 122:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 126:	cf 5f       	subi	r28, 0xFF	; 255
+for(i=0;i<64;i++) write_data(0x01);
+write_com(Page_Add+7);
+write_com(Col_Add+0);
+for(i=0;i<64;i++) write_data(0x80);
+
+for(i=0;i<8;i++)
+ 128:	c0 3c       	cpi	r28, 0xC0	; 192
+ 12a:	39 f7       	brne	.-50     	; 0xfa <frame+0x38>
+Scs=0;
+write_com(Page_Add+i);
+write_com(Col_Add+0);
+write_data(0xff);
+}
+}
+ 12c:	cf 91       	pop	r28
+ 12e:	08 95       	ret
+
+00000130 <Clr_Scr>:
+
+
+/*------------------清除内存---------------*/
+void Clr_Scr()
+{
+ 130:	cf 93       	push	r28
+ 132:	df 93       	push	r29
+unsigned char j,k;
+Mcs=1;Scs=1;
+ 134:	15 9a       	sbi	0x02, 5	; 2
+ 136:	14 9a       	sbi	0x02, 4	; 2
+write_com(Page_Add+0);
+ 138:	88 eb       	ldi	r24, 0xB8	; 184
+ 13a:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 13e:	80 e4       	ldi	r24, 0x40	; 64
+ 140:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 144:	d8 eb       	ldi	r29, 0xB8	; 184
+
+for(k=0;k<8;k++){
+write_com(Page_Add+k);
+ 146:	8d 2f       	mov	r24, r29
+ 148:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 14c:	c0 e4       	ldi	r28, 0x40	; 64
+for(j=0;j<64;j++)write_data(0x00);
+ 14e:	80 e0       	ldi	r24, 0x00	; 0
+ 150:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 154:	c1 50       	subi	r28, 0x01	; 1
+ 156:	d9 f7       	brne	.-10     	; 0x14e <Clr_Scr+0x1e>
+ 158:	df 5f       	subi	r29, 0xFF	; 255
+unsigned char j,k;
+Mcs=1;Scs=1;
+write_com(Page_Add+0);
+write_com(Col_Add+0);
+
+for(k=0;k<8;k++){
+ 15a:	d0 3c       	cpi	r29, 0xC0	; 192
+ 15c:	a1 f7       	brne	.-24     	; 0x146 <Clr_Scr+0x16>
+write_com(Page_Add+k);
+for(j=0;j<64;j++)write_data(0x00);
+}
+}
+ 15e:	df 91       	pop	r29
+ 160:	cf 91       	pop	r28
+ 162:	08 95       	ret
+
+00000164 <Disp_Img>:
+
+/*------------------显示12864图片---------------------------*/
+void Disp_Img(unsigned char  *img)
+{
+ 164:	af 92       	push	r10
+ 166:	bf 92       	push	r11
+ 168:	df 92       	push	r13
+ 16a:	ef 92       	push	r14
+ 16c:	ff 92       	push	r15
+ 16e:	0f 93       	push	r16
+ 170:	1f 93       	push	r17
+ 172:	cf 93       	push	r28
+ 174:	df 93       	push	r29
+ 176:	8c 01       	movw	r16, r24
+ 178:	00 5c       	subi	r16, 0xC0	; 192
+ 17a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 17c:	5c 01       	movw	r10, r24
+ 17e:	20 ec       	ldi	r18, 0xC0	; 192
+ 180:	a2 1a       	sub	r10, r18
+ 182:	2b ef       	ldi	r18, 0xFB	; 251
+ 184:	b2 0a       	sbc	r11, r18
+ 186:	0f 2e       	mov	r0, r31
+ 188:	f8 eb       	ldi	r31, 0xB8	; 184
+ 18a:	df 2e       	mov	r13, r31
+ 18c:	f0 2d       	mov	r31, r0
+unsigned char j,k;
+for(k=0;k<8;k++){
+Mcs=1;Scs=0;delay(10);
+ 18e:	15 9a       	sbi	0x02, 5	; 2
+ 190:	14 98       	cbi	0x02, 4	; 2
+write_com(Page_Add+k);
+ 192:	8d 2d       	mov	r24, r13
+ 194:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 198:	80 e4       	ldi	r24, 0x40	; 64
+ 19a:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 19e:	e8 01       	movw	r28, r16
+ 1a0:	c0 54       	subi	r28, 0x40	; 64
+ 1a2:	d1 09       	sbc	r29, r1
+for(j=0;j<64;j++) write_data(img[k*128+j]);
+ 1a4:	89 91       	ld	r24, Y+
+ 1a6:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 1aa:	0c 17       	cp	r16, r28
+ 1ac:	1d 07       	cpc	r17, r29
+ 1ae:	d1 f7       	brne	.-12     	; 0x1a4 <Disp_Img+0x40>
+Mcs=0;Scs=1; delay(10);
+ 1b0:	15 98       	cbi	0x02, 5	; 2
+ 1b2:	14 9a       	sbi	0x02, 4	; 2
+write_com(Page_Add+k);
+ 1b4:	8d 2d       	mov	r24, r13
+ 1b6:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 1ba:	80 e4       	ldi	r24, 0x40	; 64
+ 1bc:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 1c0:	78 01       	movw	r14, r16
+ 1c2:	80 e4       	ldi	r24, 0x40	; 64
+ 1c4:	e8 0e       	add	r14, r24
+ 1c6:	f1 1c       	adc	r15, r1
+ 1c8:	e8 01       	movw	r28, r16
+for(j=64;j<128;j++) write_data(img[k*128+j]);
+ 1ca:	89 91       	ld	r24, Y+
+ 1cc:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 1d0:	ce 15       	cp	r28, r14
+ 1d2:	df 05       	cpc	r29, r15
+ 1d4:	d1 f7       	brne	.-12     	; 0x1ca <Disp_Img+0x66>
+ 1d6:	d3 94       	inc	r13
+ 1d8:	00 58       	subi	r16, 0x80	; 128
+ 1da:	1f 4f       	sbci	r17, 0xFF	; 255
+
+/*------------------显示12864图片---------------------------*/
+void Disp_Img(unsigned char  *img)
+{
+unsigned char j,k;
+for(k=0;k<8;k++){
+ 1dc:	0a 15       	cp	r16, r10
+ 1de:	1b 05       	cpc	r17, r11
+ 1e0:	b1 f6       	brne	.-84     	; 0x18e <Disp_Img+0x2a>
+Mcs=0;Scs=1; delay(10);
+write_com(Page_Add+k);
+write_com(Col_Add+0);
+for(j=64;j<128;j++) write_data(img[k*128+j]);
+}
+}
+ 1e2:	df 91       	pop	r29
+ 1e4:	cf 91       	pop	r28
+ 1e6:	1f 91       	pop	r17
+ 1e8:	0f 91       	pop	r16
+ 1ea:	ff 90       	pop	r15
+ 1ec:	ef 90       	pop	r14
+ 1ee:	df 90       	pop	r13
+ 1f0:	bf 90       	pop	r11
+ 1f2:	af 90       	pop	r10
+ 1f4:	08 95       	ret
+
+000001f6 <Disp_H_Line>:
+
+/*------------------显示横---------------------------*/
+void Disp_H_Line()
+{
+ 1f6:	cf 93       	push	r28
+ 1f8:	df 93       	push	r29
+unsigned char i,j;
+Mcs=1;
+ 1fa:	15 9a       	sbi	0x02, 5	; 2
+Scs=1;
+ 1fc:	14 9a       	sbi	0x02, 4	; 2
+write_com(Disp_On);
+ 1fe:	8f e3       	ldi	r24, 0x3F	; 63
+ 200:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Page_Add);
+ 204:	88 eb       	ldi	r24, 0xB8	; 184
+ 206:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Start_Line);
+ 20a:	80 ec       	ldi	r24, 0xC0	; 192
+ 20c:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add);
+ 210:	80 e4       	ldi	r24, 0x40	; 64
+ 212:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 216:	d8 eb       	ldi	r29, 0xB8	; 184
+
+for(j=0;j<8;j++)
+{
+write_com(Page_Add+j);
+ 218:	8d 2f       	mov	r24, r29
+ 21a:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 21e:	80 e4       	ldi	r24, 0x40	; 64
+ 220:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 224:	c0 e4       	ldi	r28, 0x40	; 64
+// write_com(Start_Line+0);
+for(i=0;i<64;i++)write_data(0x55);
+ 226:	85 e5       	ldi	r24, 0x55	; 85
+ 228:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 22c:	c1 50       	subi	r28, 0x01	; 1
+ 22e:	d9 f7       	brne	.-10     	; 0x226 <Disp_H_Line+0x30>
+ 230:	df 5f       	subi	r29, 0xFF	; 255
+write_com(Disp_On);
+write_com(Page_Add);
+write_com(Start_Line);
+write_com(Col_Add);
+
+for(j=0;j<8;j++)
+ 232:	d0 3c       	cpi	r29, 0xC0	; 192
+ 234:	89 f7       	brne	.-30     	; 0x218 <Disp_H_Line+0x22>
+write_com(Page_Add+j);
+write_com(Col_Add+0);
+// write_com(Start_Line+0);
+for(i=0;i<64;i++)write_data(0x55);
+}
+}
+ 236:	df 91       	pop	r29
+ 238:	cf 91       	pop	r28
+ 23a:	08 95       	ret
+
+0000023c <Disp_V_Line>:
+
+
+/*------------------显示列-----------------------------*/
+void Disp_V_Line()
+{
+ 23c:	cf 93       	push	r28
+ 23e:	df 93       	push	r29
+unsigned char i,j;
+write_com(Disp_On);
+ 240:	8f e3       	ldi	r24, 0x3F	; 63
+ 242:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Page_Add);
+ 246:	88 eb       	ldi	r24, 0xB8	; 184
+ 248:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Start_Line);
+ 24c:	80 ec       	ldi	r24, 0xC0	; 192
+ 24e:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add);
+ 252:	80 e4       	ldi	r24, 0x40	; 64
+ 254:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 258:	d8 eb       	ldi	r29, 0xB8	; 184
+
+for(j=0;j<8;j++)
+{
+write_com(Page_Add+j);
+ 25a:	8d 2f       	mov	r24, r29
+ 25c:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 260:	80 e4       	ldi	r24, 0x40	; 64
+ 262:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Start_Line+0);
+ 266:	80 ec       	ldi	r24, 0xC0	; 192
+ 268:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 26c:	c0 e2       	ldi	r28, 0x20	; 32
+for(i=0;i<32;i++)
+{
+write_data(0x00);
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+ 270:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+write_data(0xff);
+ 274:	8f ef       	ldi	r24, 0xFF	; 255
+ 276:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 27a:	c1 50       	subi	r28, 0x01	; 1
+for(j=0;j<8;j++)
+{
+write_com(Page_Add+j);
+write_com(Col_Add+0);
+write_com(Start_Line+0);
+for(i=0;i<32;i++)
+ 27c:	c1 f7       	brne	.-16     	; 0x26e <Disp_V_Line+0x32>
+ 27e:	df 5f       	subi	r29, 0xFF	; 255
+write_com(Disp_On);
+write_com(Page_Add);
+write_com(Start_Line);
+write_com(Col_Add);
+
+for(j=0;j<8;j++)
+ 280:	d0 3c       	cpi	r29, 0xC0	; 192
+ 282:	59 f7       	brne	.-42     	; 0x25a <Disp_V_Line+0x1e>
+write_data(0x00);
+write_data(0xff);
+}
+
+}
+}
+ 284:	df 91       	pop	r29
+ 286:	cf 91       	pop	r28
+ 288:	08 95       	ret
+
+0000028a <hz_disp16>:
+
+
+/*---------------------指定位置显示汉字16*16-----------------------*/
+
+void hz_disp16(unsigned char pag,unsigned char col, unsigned char  *hzk)
+{
+ 28a:	df 92       	push	r13
+ 28c:	ef 92       	push	r14
+ 28e:	ff 92       	push	r15
+ 290:	0f 93       	push	r16
+ 292:	1f 93       	push	r17
+ 294:	cf 93       	push	r28
+ 296:	df 93       	push	r29
+ 298:	0f 2e       	mov	r0, r31
+ 29a:	f8 eb       	ldi	r31, 0xB8	; 184
+ 29c:	ff 2e       	mov	r15, r31
+ 29e:	f0 2d       	mov	r31, r0
+ 2a0:	f8 0e       	add	r15, r24
+ 2a2:	c4 2f       	mov	r28, r20
+ 2a4:	d5 2f       	mov	r29, r21
+ 2a6:	0f 2e       	mov	r0, r31
+ 2a8:	fa eb       	ldi	r31, 0xBA	; 186
+ 2aa:	ef 2e       	mov	r14, r31
+ 2ac:	f0 2d       	mov	r31, r0
+ 2ae:	e8 0e       	add	r14, r24
+unsigned char j=0,i=0;
+for(j=0;j<2;j++){
+write_com(Page_Add+pag+j);
+write_com(Col_Add+col);
+ 2b0:	68 94       	set
+ 2b2:	dd 24       	eor	r13, r13
+ 2b4:	d6 f8       	bld	r13, 6
+ 2b6:	d6 0e       	add	r13, r22
+
+void hz_disp16(unsigned char pag,unsigned char col, unsigned char  *hzk)
+{
+unsigned char j=0,i=0;
+for(j=0;j<2;j++){
+write_com(Page_Add+pag+j);
+ 2b8:	8f 2d       	mov	r24, r15
+ 2ba:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+col);
+ 2be:	8d 2d       	mov	r24, r13
+ 2c0:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 2c4:	8e 01       	movw	r16, r28
+ 2c6:	00 5f       	subi	r16, 0xF0	; 240
+ 2c8:	1f 4f       	sbci	r17, 0xFF	; 255
+for(i=0;i<16;i++) write_data(hzk[16*j+i]);
+ 2ca:	89 91       	ld	r24, Y+
+ 2cc:	0e 94 5b 00 	call	0xb6	; 0xb6 <write_data>
+ 2d0:	c0 17       	cp	r28, r16
+ 2d2:	d1 07       	cpc	r29, r17
+ 2d4:	d1 f7       	brne	.-12     	; 0x2ca <hz_disp16+0x40>
+ 2d6:	f3 94       	inc	r15
+ 2d8:	e8 01       	movw	r28, r16
+/*---------------------指定位置显示汉字16*16-----------------------*/
+
+void hz_disp16(unsigned char pag,unsigned char col, unsigned char  *hzk)
+{
+unsigned char j=0,i=0;
+for(j=0;j<2;j++){
+ 2da:	fe 10       	cpse	r15, r14
+ 2dc:	ed cf       	rjmp	.-38     	; 0x2b8 <hz_disp16+0x2e>
+write_com(Page_Add+pag+j);
+write_com(Col_Add+col);
+for(i=0;i<16;i++) write_data(hzk[16*j+i]);
+}
+}
+ 2de:	df 91       	pop	r29
+ 2e0:	cf 91       	pop	r28
+ 2e2:	1f 91       	pop	r17
+ 2e4:	0f 91       	pop	r16
+ 2e6:	ff 90       	pop	r15
+ 2e8:	ef 90       	pop	r14
+ 2ea:	df 90       	pop	r13
+ 2ec:	08 95       	ret
+
+000002ee <init_lcd>:
+
+
+/*------------------初始化LCD屏--------------------------*/
+void init_lcd()
+{
+Lcd_Rst=0;
+ 2ee:	2c 98       	cbi	0x05, 4	; 5
+delay(100);
+Lcd_Rst=1;
+ 2f0:	2c 9a       	sbi	0x05, 4	; 5
+delay(100);
+
+Mcs=1;
+ 2f2:	15 9a       	sbi	0x02, 5	; 2
+Scs=1;
+ 2f4:	14 9a       	sbi	0x02, 4	; 2
+
+delay(100);
+write_com(Disp_Off);
+ 2f6:	8e e3       	ldi	r24, 0x3E	; 62
+ 2f8:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Page_Add+0);
+ 2fc:	88 eb       	ldi	r24, 0xB8	; 184
+ 2fe:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Start_Line+0);
+ 302:	80 ec       	ldi	r24, 0xC0	; 192
+ 304:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Col_Add+0);
+ 308:	80 e4       	ldi	r24, 0x40	; 64
+ 30a:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+write_com(Disp_On);
+ 30e:	8f e3       	ldi	r24, 0x3F	; 63
+ 310:	0e 94 55 00 	call	0xaa	; 0xaa <write_com>
+ 314:	08 95       	ret
+
+00000316 <Msg>:
+}
+
+
+/*------------------------------信息显示------------------------*/
+void Msg(int flg)
+{
+ 316:	cf 93       	push	r28
+ 318:	df 93       	push	r29
+ 31a:	ec 01       	movw	r28, r24
+Clr_Scr();
+ 31c:	0e 94 98 00 	call	0x130	; 0x130 <Clr_Scr>
+frame();
+ 320:	0e 94 61 00 	call	0xc2	; 0xc2 <frame>
+if(flg==0){ //显示“测试开始”
+ 324:	20 97       	sbiw	r28, 0x00	; 0
+ 326:	e9 f4       	brne	.+58     	; 0x362 <Msg+0x4c>
+Mcs=1;Scs=0;
+ 328:	15 9a       	sbi	0x02, 5	; 2
+ 32a:	14 98       	cbi	0x02, 4	; 2
+hz_disp16(3,32,ce);
+ 32c:	40 ea       	ldi	r20, 0xA0	; 160
+ 32e:	55 e0       	ldi	r21, 0x05	; 5
+ 330:	60 e2       	ldi	r22, 0x20	; 32
+ 332:	83 e0       	ldi	r24, 0x03	; 3
+ 334:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+delay(2000);
+hz_disp16(3,48,shi);
+ 338:	40 e8       	ldi	r20, 0x80	; 128
+ 33a:	55 e0       	ldi	r21, 0x05	; 5
+ 33c:	60 e3       	ldi	r22, 0x30	; 48
+ 33e:	83 e0       	ldi	r24, 0x03	; 3
+ 340:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+delay(2000);
+Mcs=0;Scs=1;
+ 344:	15 98       	cbi	0x02, 5	; 2
+ 346:	14 9a       	sbi	0x02, 4	; 2
+hz_disp16(3,0,kai);
+ 348:	40 e6       	ldi	r20, 0x60	; 96
+ 34a:	55 e0       	ldi	r21, 0x05	; 5
+ 34c:	60 e0       	ldi	r22, 0x00	; 0
+ 34e:	83 e0       	ldi	r24, 0x03	; 3
+ 350:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+delay(2000);
+hz_disp16(3,16,shi3);
+ 354:	40 e4       	ldi	r20, 0x40	; 64
+ 356:	55 e0       	ldi	r21, 0x05	; 5
+ 358:	60 e1       	ldi	r22, 0x10	; 16
+ 35a:	83 e0       	ldi	r24, 0x03	; 3
+ 35c:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+ 360:	1e c0       	rjmp	.+60     	; 0x39e <Msg+0x88>
+delay(2000);
+}
+else if(flg==1){ //显示“测试完毕”
+ 362:	21 97       	sbiw	r28, 0x01	; 1
+ 364:	e1 f4       	brne	.+56     	; 0x39e <Msg+0x88>
+Mcs=1;Scs=0;
+ 366:	15 9a       	sbi	0x02, 5	; 2
+ 368:	14 98       	cbi	0x02, 4	; 2
+hz_disp16(3,32,ce);
+ 36a:	40 ea       	ldi	r20, 0xA0	; 160
+ 36c:	55 e0       	ldi	r21, 0x05	; 5
+ 36e:	60 e2       	ldi	r22, 0x20	; 32
+ 370:	83 e0       	ldi	r24, 0x03	; 3
+ 372:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+hz_disp16(3,48,shi);
+ 376:	40 e8       	ldi	r20, 0x80	; 128
+ 378:	55 e0       	ldi	r21, 0x05	; 5
+ 37a:	60 e3       	ldi	r22, 0x30	; 48
+ 37c:	83 e0       	ldi	r24, 0x03	; 3
+ 37e:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+Mcs=0;Scs=1;
+ 382:	15 98       	cbi	0x02, 5	; 2
+ 384:	14 9a       	sbi	0x02, 4	; 2
+hz_disp16(3,0,wan);
+ 386:	40 e2       	ldi	r20, 0x20	; 32
+ 388:	55 e0       	ldi	r21, 0x05	; 5
+ 38a:	60 e0       	ldi	r22, 0x00	; 0
+ 38c:	83 e0       	ldi	r24, 0x03	; 3
+ 38e:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+hz_disp16(3,16,bi); 
+ 392:	40 e0       	ldi	r20, 0x00	; 0
+ 394:	55 e0       	ldi	r21, 0x05	; 5
+ 396:	60 e1       	ldi	r22, 0x10	; 16
+ 398:	83 e0       	ldi	r24, 0x03	; 3
+ 39a:	0e 94 45 01 	call	0x28a	; 0x28a <hz_disp16>
+}
+}
+ 39e:	df 91       	pop	r29
+ 3a0:	cf 91       	pop	r28
+ 3a2:	08 95       	ret
+
+000003a4 <main>:
+
+unsigned char i=0;
+while(1){
+
+
+init_lcd();
+ 3a4:	0e 94 77 01 	call	0x2ee	; 0x2ee <init_lcd>
+Disp_Img(FirstPage);
+ 3a8:	80 e0       	ldi	r24, 0x00	; 0
+ 3aa:	91 e0       	ldi	r25, 0x01	; 1
+ 3ac:	0e 94 b2 00 	call	0x164	; 0x164 <Disp_Img>
+delay(30000);
+Msg(0);
+ 3b0:	80 e0       	ldi	r24, 0x00	; 0
+ 3b2:	90 e0       	ldi	r25, 0x00	; 0
+ 3b4:	0e 94 8b 01 	call	0x316	; 0x316 <Msg>
+delay(10000);
+Disp_H_Line();
+ 3b8:	0e 94 fb 00 	call	0x1f6	; 0x1f6 <Disp_H_Line>
+delay(10000);
+Disp_V_Line();
+ 3bc:	0e 94 1e 01 	call	0x23c	; 0x23c <Disp_V_Line>
+delay(10000);
+Msg(1); 
+ 3c0:	81 e0       	ldi	r24, 0x01	; 1
+ 3c2:	90 e0       	ldi	r25, 0x00	; 0
+ 3c4:	0e 94 8b 01 	call	0x316	; 0x316 <Msg>
+delay(10000);
+}
+ 3c8:	ed cf       	rjmp	.-38     	; 0x3a4 <main>
+
+000003ca <_exit>:
+ 3ca:	f8 94       	cli
+
+000003cc <__stop_program>:
+ 3cc:	ff cf       	rjmp	.-2      	; 0x3cc <__stop_program>
